@@ -3,11 +3,12 @@ from film.models import Movies, Comments
 
 
 class MoviesSerializer(serializers.ModelSerializer):
+    url = serializers.HyperlinkedIdentityField(view_name='moviesItem', read_only=True)
 
     class Meta:
         model = Movies
-        fields = ['title', 'year', 'rated', 'relased', 'runtime', 'genre', 'plot', 'language', ]
-        read_only_fields = ['pk', 'year', 'rated', 'relased', 'runtime', 'genre', 'plot', 'language',]
+        fields = ['pk', 'title', 'year', 'rated', 'relased', 'runtime', 'genre', 'plot', 'language', 'url', ]
+        read_only_fields = ['pk', 'year', 'rated', 'relased', 'runtime', 'genre', 'plot', 'language', ]
 
     def validate_title(self, value):
         qs = Movies.objects.filter(title__iexact=value)
@@ -19,9 +20,10 @@ class MoviesSerializer(serializers.ModelSerializer):
 
 
 class CommentsSerializers(serializers.ModelSerializer):
+    url = serializers.HyperlinkedIdentityField(view_name='commentsItem', read_only=True)
 
     class Meta:
         model = Comments
-        fields = ['text']
+        fields = ['pk', 'movies', 'text', 'url', ]
         read_only_fields = ['pk']
 
