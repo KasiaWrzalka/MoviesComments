@@ -1,6 +1,6 @@
 Django~=2.1
 djangorestframework==3.8.2
-djangorestframework-jwt--1.11.0
+djangorestframework-jwt--1.8
 coreapi--2.3.3
 psycopg2--2.7.5
 django-filter--2.0.0
