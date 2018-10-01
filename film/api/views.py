@@ -22,7 +22,7 @@ class MoviesList(mixins.CreateModelMixin, generics.ListAPIView):
     lookup_field = "pk"
     filter_backends = (DjangoFilterBackend, SearchFilter, OrderingFilter, )
     filter_fields = ('year', 'genre', 'language', )
-    search_fields = ('title', 'plot', )
+    search_fields = ('title', 'plot', 'genre', 'language', 'year')
     ordering_fields = ('title', 'year', )
 
     def get_queryset(self):
