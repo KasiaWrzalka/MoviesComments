@@ -26,7 +26,7 @@ SECRET_KEY = '@&so3ppk$%7p!dp_9@w@w$(ng0a5h=trxp+$n(w=zzd0z$ku@^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['vast-hollows-15941.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
