@@ -42,7 +42,11 @@ Now you can install requirements for app:
 ```bash
 pip install -r requirements.txt 
 ```
-Take care of database:
+Take care of database. Create empty database PostgreSQL. Import database:
+```bash
+psql empty_database < backup.bak
+```
+Update DATABASES in *settings.py* and use command:
 ```bash
 python manage.py migrate
 python manage.py makemigrations
